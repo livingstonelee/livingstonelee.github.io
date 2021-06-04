@@ -17,25 +17,13 @@ function Count() {
 	this.nexttotal = ((((this.nextmonth)*30 + this.nextdate)*24 + this.nexthour)*60 + this.nextmin)*60 + this.nextsec;
 	this.nowtotal = ((((this.month)*30 + this.date)*24 + this.hour)*60 + this.minute)*60 + this.second;
 	this.total = this.nexttotal - this.nowtotal;
+	this.waitdate = Math.floor(this.total / (60*60*24));
+	this.waithour = Math.floor((this.total - this.waitdate*60*60*24) / (60*60));
+	this.waitmin = Math.floor((this.total - this.waitdate*60*60*24 - this.waithour*60*60) / 60);
+	this.waitsec = this.total - this.waitdate*60*60*24 - this.waithour*60*60 - this.waitmin*60;
+
+
 		
-	int waitdate = this.total / (60*60*24);
-	int waithour = (this.total - waitdate*60*60*24) / (60*60);
-	int waitmin = (this.total - waitdate*60*60*24 - waithour*60*60) / 60;
-	int waitsec = this.total - waitdate*60*60*24 - waithour*60*60 - waitmin*60;
-	
-	
-		
-	}
-	else{
-		this.waitday = (this.nextmonth-this.month)*30 + (this.nextdate-this.date) -1 ;
-		
-		
-		
-		
-		
-	}
-	
-	
 
 
 
@@ -52,9 +40,12 @@ function Count() {
     };
     
 	this.toCount = function() {
-        return "距离下一次相遇还有 : " + " " + waitdate + " Day " + waithour + ":" + waitmin + ":" + waitsec; 
+        return "距离下一次相遇还有 : " + " " + this.waitdate + " Day " + this.waithour + " : " + this.waitmin + " : " + this.waitsec; 
     };
 	
+	this.toSS = function(){
+		return this.waitdate;
+	};
 	
     this.display = function(ele) {
         var count = new Count();
