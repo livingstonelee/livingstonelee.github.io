@@ -9,7 +9,7 @@ function Clock() {
     this.second = date.getSeconds() < 10 ? "0" + date.getSeconds() : date.getSeconds();
 
     this.toString = function() {
-        return "现在是:" + this.year + "年" + this.month + "月" + this.date + "日 " + this.hour + ":" + this.minute + ":" + this.second + " " + this.day; 
+        return "现在是 ： " + this.year + "年" + this.month + "月" + this.date + "日 " + this.hour + ":" + this.minute + ":" + this.second + " " + this.day; 
     };
     
     this.toSimpleDate = function() {
@@ -17,7 +17,7 @@ function Clock() {
     };
     
     this.toDetailDate = function() {
-        return this.year + "-" + this.month + "-" + this.date + " " + this.hour + ":" + this.minute + ":" + this.second;
+        return "现在是" + this.year + "年" + this.month + "月" + this.date + "日 " + this.hour + ":" + this.minute + ":" + this.second;
     };
     
     this.display = function(ele) {
