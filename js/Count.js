@@ -27,7 +27,7 @@ function Count() {
 
 	
 	this.nowtotal = date.getTime();
-	this.TogetherDay = Math.floor(this.nowtotal / 3600 / 24 / 1000) - 18720;
+	this.TogetherDay = Math.floor(this.nowtotal / 3600 / 24 / 1000) - 18719 -1;
 	
 
 
